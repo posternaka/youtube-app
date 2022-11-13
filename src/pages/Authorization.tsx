@@ -1,6 +1,5 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import '../styles/style.scss';
 
 const Authorization = () => {
   const navigate = useNavigate();
@@ -15,8 +14,9 @@ const Authorization = () => {
     setPassword(e.target.value);
   }
 
-  const handleToMove = () => {
-    return value !== 'Nikita' && password !== '123456' ? alert('Повторите попытку') : navigate('/search');
+  const handleToMove = (e: any) => {
+    e.preventDefault();
+    return value !== 'Nikita' && password !== '123456' ? alert('Повторите попытку') : navigate('/clips');
   }
 
   return (
@@ -32,7 +32,7 @@ const Authorization = () => {
           <label>Password</label>
         </div>
         <div className='button'>
-          <button id="submit" onClick={() => handleToMove()}>Submit</button>
+          <button id="submit" onClick={(e) => handleToMove(e)}>Submit</button>
           <div id="register">
             Don't have an account?
             <button>Register</button>

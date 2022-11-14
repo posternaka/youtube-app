@@ -14,14 +14,14 @@ const Header = () => {
             <FontAwesomeIcon icon={faFilm} className={styles.logo} />
 
             <ul>
-              <li><Link to="/search">Search</Link></li>
+              <li><Link to="/">Search</Link></li>
               <li><Link to="/favorites">Favorites</Link></li>
             </ul>
 
           </div>
 
           <div className={styles.header_logOut}>
-            <Link to="/" onClick={() => localStorage.clear()}>Login Out</Link>
+            <Link to="/login" onClick={() => localStorage.clear()}>Login Out</Link>
           </div>
 
         </div>

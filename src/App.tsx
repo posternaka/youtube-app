@@ -4,23 +4,21 @@ import './styles/style.scss';
 import Authorization from './pages/Authorization';
 import Search from './pages/Search';
 import NotFound from './pages/NotFound';
-import Clips from './pages/Clips';
+import Home from './pages/Home';
+import Favorites from './pages/Favorites';
+
 import Header from './components/Header/Header';
 
 function App() {
   return (
     <>
       {/* <Authorization /> */}
-      <div className='wrapper'>
-        <div className='container'>
           <Header />
           <Routes>
               <Route path="*" element={<NotFound />} />
-                <Route path="/search" element={<Search />} />
-                <Route path="/clips" element={<Clips />} />
+              <Route path="/" element={<Home />} />
+              <Route path="/favorites" element={<Favorites />} />
           </Routes>
-        </div>
-      </div>
     </>
   );
 }

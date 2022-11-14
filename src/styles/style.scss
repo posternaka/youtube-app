@@ -2,9 +2,49 @@
 @import './normalize';
 
 .wrapper {
-    
 }
 
+.container {
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+
+// HOME
+.search {
+    
+    h2 {
+        margin-top: 80px;  
+        margin-bottom: 10px;
+    }
+}
+
+.block_search {
+    height: 40px;
+    display: flex;
+    justify-content: center
+}
+
+.input_search {
+    width: 100%;
+    border: 2px solid #131315;
+    padding: 0 10px;
+    transition: ease 0.3s;
+}
+
+.but {
+    background: #131315;
+    color: #fff;
+    cursor: pointer;
+    padding: 0 25px;
+}
+
+.input_search:focus {
+    background: #2420260e;
+}
+
+
+// LOGIN
 .login {
     background: #131315;
     font-family: 'Nunito Sans', sans-serif;

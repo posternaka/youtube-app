@@ -12,8 +12,9 @@ const Home = () => {
           <button className='but'>SEARCH</button>
         </div>
 
-
-        {[...new Array(6)].map(it => <Video />)}
+        <div className='page_video'>
+          {[...new Array(6)].map(_ => <Video />)}
+        </div>
     </div>
   </div>  
   )

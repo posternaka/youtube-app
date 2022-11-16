@@ -16,7 +16,7 @@ const Authorization = () => {
 
   const handleToMove = (e: any) => {
     e.preventDefault();
-    return value !== 'Nikita' && password !== '123456' ? alert('Повторите попытку') : navigate('/clips');
+    return value !== 'Nikita' && password !== '123456' ? alert('Повторите попытку') : navigate('/');
   }
 
   return (
@@ -34,7 +34,7 @@ const Authorization = () => {
         <div className='button'>
           <button id="submit" onClick={(e) => handleToMove(e)}>Submit</button>
           <div id="register">
-            Don't have an account?
+            <p>Don't have an account?</p>
             <button>Register</button>
           </div>
         </div>

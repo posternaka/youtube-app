@@ -1,15 +1,29 @@
 
 
 .video {
+    padding: 10px;
     cursor: pointer;
+    //Убрать бокс шэдоу после
     box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+    }
 
     img {
         overflow: hidden;
     }
 
+
     &:hover {
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1), 0 0 7px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     }
+}
+
+.layout {
+    display: flex;
+    gap: 40px;
+    width: 100%;
 }

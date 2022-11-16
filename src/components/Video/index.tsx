@@ -1,13 +1,22 @@
 import React from 'react'
 import styles from './video.module.scss';
 
-const Video = () => {
-  return (
-    <div className={styles.video}>
-        <img src="https://via.placeholder.com/468x60" alt="" />
+type Props = {
+  props: number;
+}
 
-        <h3>Название</h3>
-        <h4>Описание</h4>
+const Video = ({props: Props}) => {
+  const [layout, setLayout] = React.useState(false);
+
+  return (
+    <div className={layout ? styles.video : `${styles.video} ${styles.layout}`} >
+        <img src="https://via.placeholder.com/468x300" alt="" />
+
+        <div className='video__info'>
+          <h3>Что такое травничество, рассказывает ...</h3>
+          <p>Травничество - это сбор различных видов трав ...</p>
+          <p>Просмотров: 124124</p>
+        </div>
     </div>
   )
 }

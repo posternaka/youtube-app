@@ -47,8 +47,35 @@
     margin-top: 50px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
     row-gap: 20px;
+}
+
+.information {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    span {
+        font-weight: 100;
+        margin-left: 20px;
+    }
+
+    .layout {
+        display: flex;
+        gap: 30px;
+
+        li {
+            color: rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+            font-size: 30px;
+
+            &.active, &:hover {
+                color: rgba(0, 0, 0, 1);
+            }
+        }
+    }
 }
 
 
@@ -133,10 +160,13 @@
         #register {
             font-size: 14px;
             text-decoration: none;
-            color: #CBBDDB;
             margin: auto;
             width: 60%;
             text-align: center;
+
+            p {
+                color: #CBBDDB;
+            }
     
             button {
                 cursor: pointer;

@@ -1,9 +1,9 @@
 import React from 'react'
-import Video from '../components/Video'
+import Video from '../components/Video';
 
-const Home = () => {
+const Home: React.FC = () => {
   const variables = ['—', '|'];
-  const [layout, setLayout] = React.useState(0);
+  const [layout, setLayout] = React.useState<number>(0);
 
   return (
     <div className='container'>
@@ -25,7 +25,7 @@ const Home = () => {
         </div>
 
         <div className='page_video'>
-          { [...new Array(6)].map(_ => <Video props={layout} />) }
+          { [...new Array(6)].map(_ => <Video  />) }
         </div>
     </div>
   </div>  

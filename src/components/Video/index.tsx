@@ -1,12 +1,9 @@
 import React from 'react'
 import styles from './video.module.scss';
 
-type Props = {
-  props: number;
-}
 
-const Video = ({props: Props}) => {
-  const [layout, setLayout] = React.useState(false);
+const Video: React.FC = () => {
+  const [layout, setLayout] = React.useState(0);
 
   return (
     <div className={layout ? styles.video : `${styles.video} ${styles.layout}`} >
@@ -21,4 +18,4 @@ const Video = ({props: Props}) => {
   )
 }
 
-export default Video
+export default Video;

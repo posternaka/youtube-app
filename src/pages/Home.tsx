@@ -25,7 +25,9 @@ const Home: React.FC = () => {
         </div>
 
         <div className='page_video'>
-          { [...new Array(6)].map(_ => <Video  />) }
+          
+            { [...new Array(6)].map(_ => <div className={layout ? 'video' : 'video lay'} ><Video /></div>) }
+          
         </div>
     </div>
   </div>  

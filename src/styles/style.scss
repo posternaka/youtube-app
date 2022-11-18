@@ -22,13 +22,14 @@
 .block_search {
     height: 40px;
     display: flex;
-    justify-content: center
+    justify-content: center;
 }
 
 .input_search {
     width: 100%;
     border: 2px solid #131315;
     padding: 0 10px;
+    opacity: 0.2;
     transition: ease 0.3s;
 }
 
@@ -41,6 +42,7 @@
 
 .input_search:focus {
     background: #2420260e;
+    opacity: 1;
 }
 
 .page_video {
@@ -186,5 +188,37 @@
     width: 100%;
     padding: 15px;
     background: #13131513;
-    margin: 10px;
+    margin-top: 20px;
+}
+
+
+//Video
+
+
+.video {
+    padding: 10px;
+    cursor: pointer;
+    //Убрать бокс шэдоу после
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    img {
+        overflow: hidden;
+    }
+
+
+    &:hover {
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    }
+}
+
+.lay {
+    display: flex;
+    gap: 40px;
+    width: 100%;
 }

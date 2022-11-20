@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import FavoriteBlock from '../components/Favorites';
 
 const Favorites = () => {
   return (
     <div className='container'>
-      { [...new Array(6)].map(_ => <div className='cart'>Hi</div>) }
+      { [...new Array(6)].map(_ => <FavoriteBlock />) }
     </div>
   )
 }

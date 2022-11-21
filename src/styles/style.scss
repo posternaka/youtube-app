@@ -31,6 +31,7 @@
     padding: 0 10px;
     opacity: 0.2;
     transition: ease 0.3s;
+    border-right: none;
 }
 
 .but {
@@ -38,6 +39,12 @@
     color: #fff;
     cursor: pointer;
     padding: 0 25px;
+    transition: 0.3s;
+    border: none;
+
+    &:hover {
+        background: #13131584;
+    }
 }
 
 .input_search:focus {
@@ -47,6 +54,7 @@
 
 .page_video {
     margin-top: 50px;
+    margin-bottom: 60px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;

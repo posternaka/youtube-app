@@ -225,3 +225,124 @@
     gap: 40px;
     width: 100%;
 }
+
+
+// Favorites and Modal
+
+.favorites {
+    position: relative;
+}
+
+.modal {
+    width: 400px;
+    position: absolute;
+    z-index: 10;
+    background: #fff;
+    transition: 0.5s;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+
+.modalWindow.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modalWindow__flex {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 90px;
+    padding-right: 90px;
+    /* display: flex;
+    flex-direction: column; */
+    background-color: #fff;
+    border-radius: 15px;
+}
+
+.modalWindow__title {
+    color: #131315;
+    margin-bottom: 20px;
+}
+
+.requie input,
+.requie select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border: 1px solid #131315;
+    border-radius: 5px;
+    outline: none;
+    color: #000;
+    font-size: 1rem;
+}
+
+
+form {
+    width: 250px;
+    padding: 20px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+}
+
+.button_group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+}
+
+
+.inversion {
+    cursor: pointer; 
+    background: #fff;
+    border: 1px solid #131315;
+    text-transform: uppercase;
+    color: #000;
+    transition: .5s;
+}
+
+.inversion:hover {
+    background: rgb(250 250 250);
+}
+
+span.red {
+    color: red;
+}
+
+.range_grid {
+    display: grid;
+    grid-template-columns: 2fr 90px;
+    gap: 20px;
+    align-items: end;
+}
+
+.slider {
+    appearance: none;
+    width: 100%;
+    height: 5px;
+    margin-bottom: 20px;
+    border-radius: 5px;  
+    background: #131315;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; 
+    background: #131315;
+    cursor: pointer;
+}
+
+.ban {
+    pointer-events: none;
+    background: rgb(234, 234, 234);
+}

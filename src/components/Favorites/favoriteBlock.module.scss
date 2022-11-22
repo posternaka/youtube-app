@@ -5,10 +5,15 @@
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
+    position: relative;
 
     &__options {
         display: flex;
         gap: 15px;
+    }
+
+    .modal {
+        position: absolute;
     }
 
     button {

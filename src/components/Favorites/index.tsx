@@ -1,15 +1,27 @@
 import React from 'react';
 import style from './favoriteBlock.module.scss';
 
+type Props = {
+  setVisible: () => void;
+}
+
 const FavoriteBlock = () => {
-  return (
-    <div className={style.cart}>
-      <p>Name</p>
-      <div className={style.cart__options}>
-        <button>edit</button>
-        <button>delete</button>
-      </div>
-    </div>
+  const arr: Array<string> = ['how', 'about', 'your', 'name', 'mr', 'unknown'];
+  
+  return ( 
+    <>
+      {arr && 
+        arr.map((it, index) => (
+          <div key={index} className={style.cart} >
+            <p>{it}</p>
+            <div className={style.cart__options} >
+              <button >edit</button>
+              <button >delete</button>
+            </div>
+          </div>
+        ))
+      }
+    </>
   )
 }
 

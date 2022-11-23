@@ -2,14 +2,15 @@ import React from 'react';
 import FavoriteBlock from '../components/Favorites';
 import ModalWindow from '../components/ModalWindow/ModalWindow';
 
+
 const Favorites = () => {
-  const [isVisiblePopup, setIsVisiblePopup] = React.useState(false);
+  const [isVisibleModal, setIsVisibleModal] = React.useState<boolean>(true);
   const modalRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
     const handleClickOut = (e: MouseEvent) => {
       if(modalRef.current && !e.composedPath().includes(modalRef.current)) {
-        setIsVisiblePopup(false);
+        setIsVisibleModal(false);
       } 
     };
 
@@ -21,14 +22,22 @@ const Favorites = () => {
   }, []);
 
   return (
-    <div className='container'>
-      <div className='favorites'>
-      <div className='modal'>
-        {isVisiblePopup ? <ModalWindow /> : ''}
+    <>
+      <div className='modal__block'>
+        <div className='modal' ref={modalRef}>
+              {isVisibleModal ? <ModalWindow
+            isVisible={isVisibleModal}
+            title="Modal Title"
+            onClose={() => setIsVisibleModal(false)}
+            /> : ''}
+        </div>
       </div>
-        { [...new Array(6)].map(_ => <FavoriteBlock />) }
+      <div className='container'>
+        <div className='favorites'>
+            <FavoriteBlock />
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 

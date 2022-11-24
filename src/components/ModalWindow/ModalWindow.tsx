@@ -3,10 +3,12 @@ import React from 'react';
 type Props = {
   title: string;
   onClose: () => void;
-  isVisible: boolean;
 }
 
-const ModalWindow = ({ isVisible = false, title, onClose }: Props) => {
+const ModalWindow = ({ title, onClose }: Props) => {
+  console.log(title);
+  
+  
   const keydownHandler = ({ key }: any) => {
     switch (key) {
       case 'Escape':
@@ -21,7 +23,7 @@ const ModalWindow = ({ isVisible = false, title, onClose }: Props) => {
     return () => document.removeEventListener('keydown', keydownHandler);
   });
 
-  return !isVisible ? null : (
+  return (
     <div className="modal" onClick={onClose}>
       <div className="modal-dialog" onClick={e => e.stopPropagation()}>
         <div className="modal-header">
@@ -33,7 +35,7 @@ const ModalWindow = ({ isVisible = false, title, onClose }: Props) => {
         <div className="modal-body">
           <div className="modal-content"><p>Add your content here</p></div>
         </div>
-        <div className="modal-footer"><button>Cancel</button></div>
+        <div className="modal-footer" onClick={onClose}><button>Cancel</button></div>
       </div>
     </div>
   );

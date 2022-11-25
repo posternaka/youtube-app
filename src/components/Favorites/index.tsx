@@ -2,7 +2,10 @@ import React from 'react';
 import style from './favoriteBlock.module.scss';
 import ModalWindow from '../ModalWindow/ModalWindow';
 
+
 const FavoriteBlock = () => {
+  
+
   const arr: Array<string> = ['how', 'about', 'your', 'name', 'mr', 'unknown'];
   const [isVisibleModal, setIsVisibleModal] = React.useState<boolean>(false);
   const [currentElement, setCurrentElement] = React.useState<number>(0);
@@ -11,6 +14,8 @@ const FavoriteBlock = () => {
     setIsVisibleModal(true);
     setCurrentElement(index);
   }
+
+
   
   return ( 
     <>

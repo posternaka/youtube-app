@@ -1,9 +1,24 @@
 import React from 'react'
 import Video from '../components/Video';
+import { IVideoSlice } from '../redux/video/types';
+
+import { useSelector } from 'react-redux';
+import { useAppDispatch } from '../redux/store';
+import { fetchPizza } from '../redux/video/asyncAction';
 
 const Home: React.FC = () => {
+  const [value, setValue] = React.useState('');
   const variables = ['—', '|'];
   const [layout, setLayout] = React.useState<number>(0);
+
+  const dispatch = useAppDispatch();
+  const { video } = useSelector<any, { video: IVideoSlice }>(state => state);
+  console.log(video);
+  
+  
+  // React.useEffect(() => {
+  //   dispatch(fetchPizza())
+  // }, []);
 
   return (
     <div className='container'>
@@ -11,24 +26,35 @@ const Home: React.FC = () => {
       
         <h2>Search of videos</h2>
         <div className='block_search'>
-          <input className='input_search' type="text" />
-          <button className='but'>SEARCH</button>
+          <input className='input_search' value={value} onChange={(e: any) => setValue(e.target.value)} type="text" />
+          <p >+</p>
+          <button className='but' onClick={() => dispatch(fetchPizza(value))} >SEARCH</button>
         </div>
-
         <div className='information'>
-          <h4>Video on demand: "Травничество"<span>4289</span></h4>
+          <h4>Video on demand: {value}<span>4289</span></h4>
           <ul className='layout'>
             {
-              variables.map((it, index) => <li className={index === layout ? 'active' : ''} onClick={() => setLayout(index)}>{it}</li>)
+              variables.map((it, index) => <li key={index} className={index === layout ? 'active' : ''} onClick={() => setLayout(index)}>{it}</li>)
             }
           </ul>
         </div>
 
-        <div className='page_video'>
-          
-            { [...new Array(6)].map(_ => <div className={layout ? 'video' : 'video lay'} ><Video /></div>) }
-          
-        </div>
+        {
+          video.items.map((it, index) => (
+            <>
+              
+            
+
+              <div className='page_video'>
+                
+                  <div key={index} className={layout ? 'video' : 'video lay'} >
+                    <Video title={it.snippet.title} img={it.snippet.thumbnails.medium.url}/>
+                  </div>
+                
+              </div>
+            </>
+        ))
+      }
     </div>
   </div>  
   )

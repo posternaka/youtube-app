@@ -12,33 +12,26 @@ const FavoriteBlock = () => {
   const dispatch = useAppDispatch();
   const { video } = useSelector<any, any>(state => state);
   
-  
 
-
-  // React.useEffect(() => {
-  //   dispatch(fetchPizza())
-  // }, []);
-  
-
-  const arr: Array<string> = ['how', 'about', 'your', 'name', 'mr', 'unknown'];
+  // const arr: Array<string> = ['how', 'about', 'your', 'name', 'mr', 'unknown'];
   const [isVisibleModal, setIsVisibleModal] = React.useState<boolean>(false);
-  const [currentElement, setCurrentElement] = React.useState<number>(0);
+  const [currentElement, setCurrentElement] = React.useState<string>('');
 
-  const handleSetState = (index: number) => {
+  const handleSetState = (it: string) => {
     setIsVisibleModal(true);
-    setCurrentElement(index);
+    setCurrentElement(it);
   }
 
 
   
   return ( 
     <>
-      {isVisibleModal ? <ModalWindow title={arr[currentElement]} onClose={() => setIsVisibleModal(false)}/> : null}
-      {video.items.map((it: any, index: number) => (
+      {isVisibleModal ? <ModalWindow title={currentElement} onClose={() => setIsVisibleModal(false)}/> : null}
+      {video.favoriteRequest.map((it: any, index: number) => (
           <div key={index} className={style.cart} >
-            <p>{it.etag}</p>
+            <p>{it.q}</p>
             <div className={style.cart__options} >
-              <button onClick={() => handleSetState(index)}>edit</button>
+              <button onClick={() => handleSetState(it.q)}>edit</button>
               <button >delete</button>
             </div>
           </div>

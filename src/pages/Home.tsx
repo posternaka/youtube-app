@@ -5,6 +5,8 @@ import { IVideoSlice } from '../redux/video/types';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from '../redux/store';
 import { fetchPizza } from '../redux/video/asyncAction';
+import { setFavorites } from '../redux/video/slice';
+import { v4 as uuidv4 } from 'uuid';
 
 const Home: React.FC = () => {
   const [value, setValue] = React.useState('');
@@ -27,7 +29,7 @@ const Home: React.FC = () => {
         <h2>Search of videos</h2>
         <div className='block_search'>
           <input className='input_search' value={value} onChange={(e: any) => setValue(e.target.value)} type="text" />
-          <p className='plus' >+</p>
+          <p className='plus' onClick={() => dispatch(setFavorites({id: uuidv4(), q: value, maxResult: 5, sort: 'decs'}))}>+</p>
           <button className='but' onClick={() => dispatch(fetchPizza(value))} >SEARCH</button>
         </div>
         <div className='information'>

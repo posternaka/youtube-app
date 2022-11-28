@@ -27,7 +27,7 @@ const Home: React.FC = () => {
         <h2>Search of videos</h2>
         <div className='block_search'>
           <input className='input_search' value={value} onChange={(e: any) => setValue(e.target.value)} type="text" />
-          <p >+</p>
+          <p className='plus' >+</p>
           <button className='but' onClick={() => dispatch(fetchPizza(value))} >SEARCH</button>
         </div>
         <div className='information'>

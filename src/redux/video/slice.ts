@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { fetchPizza } from './asyncAction';
-import { IVideoSlice, YouTubeVideo, Status } from './types';
+import { IVideoSlice, YouTubeVideo, Status, Request } from './types';
 import { v4 as uuidv4 } from 'uuid';
 
 
@@ -22,6 +22,9 @@ const pizzaSlice = createSlice({
     reducers: {
         setData(state, action: PayloadAction<YouTubeVideo[]>) {
             state.items = action.payload;
+        },
+        setFavorites(state, action: PayloadAction<Request[]>) {
+            state.favoriteRequest = state.favoriteRequest.push(action.payload);
         },
     },
     extraReducers: (builder) => {

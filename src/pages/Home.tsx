@@ -1,12 +1,12 @@
 import React from 'react'
 import Video from '../components/Video';
-import { IVideoSlice } from '../redux/video/types';
 
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from '../redux/store';
 import { fetchPizza } from '../redux/video/asyncAction';
 import { setFavorites } from '../redux/video/slice';
 import { v4 as uuidv4 } from 'uuid';
+import { IVideoSlice } from '../redux/video/types';
 
 const Home: React.FC = () => {
   const [value, setValue] = React.useState('');

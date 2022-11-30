@@ -12,8 +12,6 @@ const FavoriteBlock = () => {
   const dispatch = useAppDispatch();
   const { video } = useSelector<any, any>(state => state);
   
-
-  // const arr: Array<string> = ['how', 'about', 'your', 'name', 'mr', 'unknown'];
   const [isVisibleModal, setIsVisibleModal] = React.useState<boolean>(false);
   const [currentElement, setCurrentElement] = React.useState<string>('');
 

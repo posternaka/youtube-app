@@ -1,32 +1,20 @@
 import React from 'react';
 import FavoriteBlock from '../components/Favorites';
+import Empty from '../components/Empty';
 
-
+import { useSelector } from 'react-redux';
+import { IVideoSlice } from '../redux/video/types';
 
 const Favorites = () => {
-  
-  // const modalRef = React.useRef<HTMLDivElement>(null);
+  const { video } = useSelector<any, { video: IVideoSlice }>(state => state);
 
-  // React.useEffect(() => {
-  //   const handleClickOut = (e: MouseEvent) => {
-  //     if(modalRef.current && !e.composedPath().includes(modalRef.current)) {
-  //       setIsVisibleModal(false);
-  //     } 
-  //   };
-
-  //   document.body.addEventListener('click', handleClickOut);
-
-  //   return () => {
-  //     document.body.removeEventListener('click', handleClickOut);
-  //   };
-  // }, []);
 
   return (
     <>
           
       <div className='container'>
         <div className='favorites'>
-            <FavoriteBlock />
+            {video.favoriteRequest.length ? <FavoriteBlock /> : <Empty />}
         </div>
       </div>
     </>
